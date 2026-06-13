@@ -1,0 +1,44 @@
+{
+  "name": "soumyendu-ai-robotics-teacher",
+  "version": "1.0.0",
+  "description": "Futuristic AI-powered Robotics Learning Platform",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "setup": "npm install && npm run install:all",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install && cd ../mobile && npm install",
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:mobile": "cd mobile && npm start",
+    "build": "npm run build:backend && npm run build:frontend && npm run build:mobile",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "build:mobile": "cd mobile && npm run build",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "lint": "npm run lint:backend && npm run lint:frontend",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:frontend": "cd frontend && npm run lint",
+    "docker:up": "docker-compose -f docker/docker-compose.yml up -d",
+    "docker:down": "docker-compose -f docker/docker-compose.yml down",
+    "docker:build": "docker-compose -f docker/docker-compose.yml build",
+    "db:migrate": "cd backend && npx prisma migrate dev",
+    "db:seed": "cd backend && npx prisma db seed",
+    "db:reset": "cd backend && npx prisma migrate reset",
+    "db:studio": "cd backend && npx prisma studio"
+  },
+  "keywords": [
+    "AI",
+    "Robotics",
+    "Education",
+    "Learning",
+    "Platform"
+  ],
+  "author": "Soumyendu",
+  "license": "PROPRIETARY",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
